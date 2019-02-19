@@ -1,14 +1,15 @@
 import React from 'react'
 import { StyleSheet, View, FlatList, TextInput, Text, Image } from 'react-native'
-// import { FlatList } from 'expo'
+import { Icon } from 'expo'
 
 import BuildingListItem from './BuildingListItem'
 
 import data from '../../assets/data/building-list.json'
-import { PADDING, ICON_MEDIUM_BIG, PADDING_HALF } from '../../constants/Dimensions'
+import { PADDING, ICON_MEDIUM_BIG, PADDING_HALF, ICON_MEDIUM } from '../../constants/Dimensions'
 import { filterBuildings, sortByStreetNumber } from '../../utils/SearchUtils'
 import Strings from '../../constants/Strings'
 import Images from '../../constants/Images';
+import Colors from '../../constants/Colors';
 
 data.sort((a, b) => {
   const streetA = (a.address || {}).streetName.split(' ')[1]
@@ -59,12 +60,27 @@ class SearchableBuildingList extends React.Component {
           value={text}
         />
         {text ? (
-          <FlatList
-            style={s.flatList}
-            data={filteredData}
-            renderItem={this.renderItem}
-            keyExtractor={this.keyExtractor}
-          />
+          filteredData && filteredData.length ? (
+            <FlatList
+              style={s.flatList}
+              data={filteredData}
+              renderItem={this.renderItem}
+              keyExtractor={this.keyExtractor}
+            />
+          ) : (
+              <View style={s.viewEmpty}>
+                <Text style={s.textEmpty}>
+                  {Strings.search.buildingListLabelNoResults}
+                </Text>
+                <View style={s.viewIcon}>
+                  <Icon.Ionicons
+                    name="ios-warning"
+                    size={ICON_MEDIUM}
+                    color={'white'}
+                  />
+                </View>
+              </View>
+            )
         ) : (
             <View style={s.viewEmpty}>
               <Text style={s.textEmpty}>
@@ -81,7 +97,11 @@ class SearchableBuildingList extends React.Component {
   }
 }
 
-
+const ICON_STYLE = {
+  margin: PADDING,
+  borderRadius: PADDING_HALF,
+  alignSelf: 'center',
+}
 const s = StyleSheet.create({
   viewMain: {
     flex: 1,
@@ -105,12 +125,16 @@ const s = StyleSheet.create({
     textAlign: 'center',
     opacity: 0.6
   },
+  viewIcon: {
+    ...ICON_STYLE,
+    backgroundColor: Colors.tintColor,
+    paddingVertical: PADDING_HALF,
+    paddingHorizontal: PADDING
+  },
   image: {
-    margin: PADDING,
+    ...ICON_STYLE,
     width: ICON_MEDIUM_BIG + PADDING_HALF,
     height: ICON_MEDIUM_BIG + PADDING_HALF,
-    borderRadius: PADDING_HALF,
-    alignSelf: 'center',
   },
 })
 

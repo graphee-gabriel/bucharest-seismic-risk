@@ -30,7 +30,8 @@ RISK`,
     labelZeceLaRece: `Our slightly more relaxed Bucharest project:`
   },
   search: {
-    buildingListLabel: `Search for an address to find out the seismic risk category of the bulding.`
+    buildingListLabel: `Search for an address to find out the seismic risk category of the bulding.`,
+    buildingListLabelNoResults: `Seems like no buildings at this adress were investigated. It does not mean the building is safe nor dangerous, but simply that we have no informations about it.`
   },
   category: {
     titleFallback: `Undefined`,

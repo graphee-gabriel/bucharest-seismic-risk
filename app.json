@@ -28,9 +28,6 @@
       "supportsTablet": true,
       "buildNumber": "3",
       "bundleIdentifier": "solutions.goodenough.bucharest.seismicrisk",
-      "config": {
-        "googleMapsApiKey": "AIzaSyDADuOMKfACTmQMOA_xon0YHUBkEp6ij1o"
-      }
     },
     "android": {
       "package": "solutions.goodenough.bucharest.seismicrisk",
@@ -38,12 +35,7 @@
       "permissions": [
         "ACCESS_COARSE_LOCATION",
         "ACCESS_FINE_LOCATION"
-      ],
-      "config": {
-        "googleMaps": {
-          "apiKey": "AIzaSyDADuOMKfACTmQMOA_xon0YHUBkEp6ij1o"
-        }
-      }
+      ]
     }
   }
 }

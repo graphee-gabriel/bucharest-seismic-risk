@@ -15,6 +15,7 @@ GOOD ENOUGH S.R.L
 const descriptionUrgenta = `Emergency categories have priority for the (re)consolidation process of analyzed buildings. The emergency category is determined accordingly to the level of importance of the building and the degree of assurance against seismic events, resulted from the computing. 
 
 The maximum time to commence consolidation is: U1 – 2 years, U2 – 5 years, U3 – 10 years.`
+const descriptionConsolidated = `This building was consolidated. Consolidation can be partial or total. Have a look below, some obversvations might have been added by the town hall.`
 
 const Strings = {
   about: {
@@ -40,8 +41,8 @@ RISK`,
       'Rs2': 'High Risk',
       'Rs3': 'Medium Risk',
       'Rs4': 'Lower Risk',
-      'Consolidat': '',
-      'Consolidated': '',
+      'Consolidat': 'Consolidated Building',
+      'Consolidated': 'Consolidated Building',
       'U1': 'Emergency 1/3',
       'U2': 'Emergency 2/3',
       'U3': 'Emergency 3/3',
@@ -52,8 +53,8 @@ RISK`,
       'Rs2': 'Marks the buildings which have a lower collapse probability, but to which major structural damage are expected to happen.',
       'Rs3': 'Marks the buildings which are expected to have non-structural damages that could be significant, but it will not affect its structural safety.',
       'Rs4': 'Marks the buildings where the expected seismic response is similar to that of new constructions, designed on updated guidelines.',
-      'Consolidat': '',
-      'Consolidated': '',
+      'Consolidat': descriptionConsolidated,
+      'Consolidated': descriptionConsolidated,
       'U1': descriptionUrgenta,
       'U2': descriptionUrgenta,
       'U3': descriptionUrgenta,

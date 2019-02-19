@@ -10,4 +10,11 @@ The fact that this program was then cancelled, on top of many suspicions of brib
 While we kept this information, it can be considerate as this building was not expertised, and should be investigated again with the newer RS system.
 
 This Application was made by Gabriel Morin with the help of Jeremy de France.
+
 GOOD ENOUGH S.R.L
+
+If you'd like to help improving this app or for any other matter, contact us:
+- https://goodenough.solutions/
+
+Our slightly more relaxed Bucharest project:
+- https://zecelarece.ro/

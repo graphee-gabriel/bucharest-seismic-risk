@@ -9,7 +9,7 @@
       "ios",
       "android"
     ],
-    "version": "1.0.1",
+    "version": "1.0.2",
     "orientation": "portrait",
     "icon": "./assets/images/app-icon.png",
     "splash": {
@@ -26,15 +26,18 @@
     ],
     "ios": {
       "supportsTablet": true,
+      "buildNumber": "3",
+      "bundleIdentifier": "solutions.goodenough.bucharest.seismicrisk",
       "config": {
         "googleMapsApiKey": "AIzaSyDADuOMKfACTmQMOA_xon0YHUBkEp6ij1o"
       }
     },
     "android": {
       "package": "solutions.goodenough.bucharest.seismicrisk",
-      "versionCode": 2,
+      "versionCode": 3,
       "permissions": [
-        "LOCATION"
+        "ACCESS_COARSE_LOCATION",
+        "ACCESS_FINE_LOCATION"
       ],
       "config": {
         "googleMaps": {

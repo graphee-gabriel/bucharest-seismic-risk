@@ -26,15 +26,16 @@
     ],
     "ios": {
       "supportsTablet": true,
-      "buildNumber": "3",
+      "buildNumber": "4",
       "bundleIdentifier": "solutions.goodenough.bucharest.seismicrisk",
       "config": {
         "googleMapsApiKey": ""
       }
     },
     "android": {
+      "icon": "./assets/images/app-icon-android.png",
       "package": "solutions.goodenough.bucharest.seismicrisk",
-      "versionCode": 3,
+      "versionCode": 4,
       "permissions": [
         "ACCESS_COARSE_LOCATION",
         "ACCESS_FINE_LOCATION"

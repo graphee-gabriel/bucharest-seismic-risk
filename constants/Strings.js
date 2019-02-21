@@ -4,18 +4,26 @@ The current data are based on the townhall list released in 2018. In other word,
 It is important to understand that the absence of a building on this list is in no way a garranty that this building is safe. On the contrary, it only means it was never expertised and we have no information about its safety.
 While there is no such thing as 'Risk 0' The higher in the RS category, the safer the building should be.
 
-About the 'Urgenta' system, it was in place for the 2-3 first years. It is not always linked to the iminent danger posed by a building.
-It was made to define which building was going to be re-inforced first, funded by state-money.
-The fact that this program was then cancelled, on top of many suspicions of bribery to be the first to beneficiate of this state-funded program, make the Urgenta system close to null.
-While we kept this information, it can be considerate as this building was not expertised, and should be investigated again with the newer RS system.
+About the 'Urgenta' system, it was in place for the 2-3 first years and replaced by the RS system in 1996. 
+It is not always linked to the imminent danger posed by a building, as it was made to define which building was going to be re-consolidated first, funded by state-money.
+The fact that this program was then cancelled, on top of many suspicions of bribery to be the first to benefit of this state-funded program, make the Urgenta system worthless in the mind of many Romanian.
+This is a myth as based on calculations most U1, U2 and U3 buildings should be regarded as high-risk 'RS 1' buildings. 
+Some unclear situations remains but they are exceptions to the rule.
 
 This Application was made by Gabriel Morin with the help of Jeremy de France.
 GOOD ENOUGH S.R.L
 `
 const descriptionUrgenta = `Emergency categories have priority for the (re)consolidation process of analyzed buildings. The emergency category is determined accordingly to the level of importance of the building and the degree of assurance against seismic events, resulted from the computing. 
 
-The maximum time to commence consolidation is: U1 – 2 years, U2 – 5 years, U3 – 10 years.`
+The maximum duration before starting the consolidation is: U1 – 2 years, U2 – 5 years, U3 – 10 years.
+
+This categorization system was abandoned for the RS system in 1996.
+Based on calculations the vast majority of them should be categorized as RS 1, the most vulnerable buildings in case of a significant earthquakes. 
+Those buildings need to be analyzed again by an expert.
+`
 const descriptionConsolidated = `This building was consolidated. Consolidation can be partial or total. Have a look below, some obversvations might have been added by the town hall.`
+const dangerToThePublic = 'Danger to the public'
+const consolidatedBuilding = 'Consolidated Building'
 
 const Strings = {
   about: {
@@ -35,17 +43,19 @@ RISK`,
     buildingListLabelNoResults: `Seems like no buildings at this adress were investigated. It does not mean the building is safe nor dangerous, but simply that we have no informations about it.`
   },
   category: {
-    titleFallback: `Undefined`,
+    titleFallback: `Unknown category`,
     titleFromCategory: {
-      'Rs1': 'Danger to the public',
+      'Rs1': dangerToThePublic,
       'Rs2': 'High Risk',
       'Rs3': 'Medium Risk',
       'Rs4': 'Lower Risk',
-      'Consolidat': 'Consolidated Building',
-      'Consolidated': 'Consolidated Building',
-      'U1': 'Emergency 1/3',
-      'U2': 'Emergency 2/3',
-      'U3': 'Emergency 3/3',
+      'Consolidat': consolidatedBuilding,
+      'Consolidated': consolidatedBuilding,
+      'U1': dangerToThePublic,
+      'U2': dangerToThePublic,
+      'U3': dangerToThePublic,
+      'U2. U3': dangerToThePublic,
+      'U3. U2': dangerToThePublic,
     },
     descriptionFallback: `This category is not defined`,
     descriptionFromCategory: {
@@ -58,6 +68,8 @@ RISK`,
       'U1': descriptionUrgenta,
       'U2': descriptionUrgenta,
       'U3': descriptionUrgenta,
+      'U2. U3': descriptionUrgenta,
+      'U3. U2': descriptionUrgenta,
     },
   }
 }

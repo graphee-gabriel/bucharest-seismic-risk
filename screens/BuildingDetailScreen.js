@@ -4,11 +4,10 @@ import {
   SafeAreaView,
   View,
   Text,
-  TouchableOpacity,
   ScrollView,
   Platform
-} from 'react-native' 
-import { Location, Icon, Permissions } from 'expo'
+} from 'react-native'
+import { Location, Permissions } from 'expo'
 import CategoryView from '../components/CategoryView'
 import CategoryDescription from '../components/CategoryDescription'
 import CategoryTitle from '../components/CategoryTitle'
@@ -17,9 +16,10 @@ import TextWithLabel from '../components/TextWithLabel'
 import Map from '../components/Map'
 
 import { Card } from '../components/StyledViews'
-import { Bold } from '../components/StyledText'
 
-import { PADDING_HALF, ICON_SMALL, PADDING } from '../constants/Dimensions'
+import { PADDING_HALF, PADDING } from '../constants/Dimensions'
+import TextBuildingDetails from '../components/TextBuildingDetails';
+import HeaderBuildingDetails from '../components/HeaderBuildingDetails';
 
 export default class BuildingDetailScreen extends React.Component {
   static navigationOptions = {
@@ -63,17 +63,11 @@ export default class BuildingDetailScreen extends React.Component {
     return (
       <SafeAreaView style={s.viewMain}>
         <ScrollView>
-          <View style={s.viewTitle}>
-            <TouchableOpacity style={s.touchableOpacityBack} onPress={this.onPressBack}>
-              <Icon.Ionicons name={Platform.OS === 'ios' ? 'ios-arrow-back' : 'md-arrow-back'} size={ICON_SMALL} />
-            </TouchableOpacity>
-            <Text style={s.textTitle}>
-              {streetName}
-            </Text>
-            <Text style={s.textNumber}>
-              {streetNumber}
-            </Text>
-          </View>
+          <HeaderBuildingDetails
+            streetName={streetName}
+            streetNumber={streetNumber}
+            onPressBack={this.onPressBack}
+          />
           <Map
             latitude={latitude}
             longitude={longitude}
@@ -95,9 +89,13 @@ export default class BuildingDetailScreen extends React.Component {
                 <Text style={s.textExtras}>
                   Observations: {observations || 'none'}
                 </Text>
-                <Text style={s.textExtras}>
-                  This building was built in <Bold>{yearConstruction}</Bold> and holds <Bold>{apartmentCount}</Bold> apartments. In terms of height, it is classified as <Bold>{heightRegime}</Bold>, occupying a total surface of <Bold>{area}m</Bold>.
-            </Text>
+                <TextBuildingDetails
+                  style={s.textExtras}
+                  yearConstruction={yearConstruction}
+                  apartmentCount={apartmentCount}
+                  heightRegime={heightRegime}
+                  area={area}
+                />
               </View>
             </View>
           </View>
@@ -113,7 +111,7 @@ const s = StyleSheet.create({
     backgroundColor: '#fff',
     // marginTop: PADDING,
   },
-  viewTitle: {
+  viewHeader: {
     flexDirection: 'row',
     alignItems: 'center',
     margin: PADDING_HALF,

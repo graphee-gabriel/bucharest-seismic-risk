@@ -4,6 +4,7 @@ export default {
   tintColor,
   tabIconDefault: '#ccc',
   tabIconSelected: tintColor,
+  neutralColor: '#c9c9c9',
   dangerColor: '#f71313',
   infoColor: '#f7c913',
   validColor: '#0fc402',

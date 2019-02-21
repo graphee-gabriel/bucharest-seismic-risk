@@ -11,6 +11,9 @@ import Strings from '../../constants/Strings'
 import Images from '../../constants/Images';
 import Colors from '../../constants/Colors';
 
+const EMPTY_ICON_MEDIUM = ICON_MEDIUM + PADDING_HALF
+const EMPTY_ICON_MEDIUM_BIG = ICON_MEDIUM_BIG + PADDING_HALF
+
 data.sort((a, b) => {
   const streetA = (a.address || {}).streetName.split(' ')[1]
   const streetB = (b.address || {}).streetName.split(' ')[1]
@@ -75,7 +78,7 @@ class SearchableBuildingList extends React.Component {
                 <View style={s.viewIcon}>
                   <Icon.Ionicons
                     name="ios-warning"
-                    size={ICON_MEDIUM}
+                    size={EMPTY_ICON_MEDIUM}
                     color={'white'}
                   />
                 </View>
@@ -100,6 +103,8 @@ class SearchableBuildingList extends React.Component {
 const ICON_STYLE = {
   margin: PADDING,
   borderRadius: PADDING_HALF,
+  width: EMPTY_ICON_MEDIUM_BIG,
+  height: EMPTY_ICON_MEDIUM_BIG,
   alignSelf: 'center',
 }
 const s = StyleSheet.create({
@@ -128,14 +133,12 @@ const s = StyleSheet.create({
   viewIcon: {
     ...ICON_STYLE,
     backgroundColor: Colors.tintColor,
-    paddingVertical: PADDING_HALF,
-    paddingHorizontal: PADDING
+    justifyContent: 'center',
+    alignItems: 'center',
+    // paddingVertical: PADDING_HALF,
+    // paddingHorizontal: PADDING
   },
-  image: {
-    ...ICON_STYLE,
-    width: ICON_MEDIUM_BIG + PADDING_HALF,
-    height: ICON_MEDIUM_BIG + PADDING_HALF,
-  },
+  image: ICON_STYLE,
 })
 
 export default SearchableBuildingList
